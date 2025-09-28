@@ -1,38 +1,21 @@
 class Solution {
     public int majorityElement(int[] arr) {
 
-        // O(n)
-        int count =0; 
-        int candidate =0;
+        int count =0;
+        int next =0;
 
-        for(int num :arr){
-            if(count == 0){
-                candidate = num;
+        for(int ar : arr){
+            if(count ==  0){
+                next = ar;
             }
-            if(num != candidate){
-                count--;
+            if(next == ar){
+                count ++;
             }else{
-                count++;
+                count --;
             }
         }
-        return candidate;
 
-
-
-        // O(n^2)
-        // int n = arr.length;   
-        // for (int i = 0; i < n; i++) {
-        //     int count = 0;
-        //     for (int j = 0; j < n; j++) {
-        //         if (arr[j] == arr[i]) {
-        //             count++;
-        //         }
-        //     }
-        //     if (count > n / 2) {
-        //         return arr[i];   
-        //     }
-        // }
-        // return -1;
+        return next;
     
 }
 }
